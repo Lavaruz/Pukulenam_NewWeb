@@ -2,6 +2,6 @@
 
 After cloning/downloading the code, do:
 ```
-npm install && npm start //install any package releated & run the server
+npm install && npm start
 ```
 then go to http://localhost:3000
