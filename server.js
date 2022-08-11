@@ -4,6 +4,8 @@ const path = require('path')
 const Parser = require('rss-parser');
 const parser = new Parser();
 
+let latestLink = ''
+
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs');
 
@@ -13,10 +15,10 @@ async function getLatestLink(){
 };
 
 app.get('/', async(req,res) => {
-    latestLink = await getLatestLink()
     res.render('index',{
         latestLink: latestLink
     })
+    latestLink = await getLatestLink()
 })
 
 async function startServer(){
