@@ -1,4 +1,4 @@
-!! requires NodeJS for run in localhost !!
+!! requires NodeJS for run this code on local server !!
 
 After cloning/downloading the code, do:
 ```
