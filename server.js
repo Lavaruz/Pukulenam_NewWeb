@@ -5,6 +5,7 @@ const Parser = require('rss-parser');
 const parser = new Parser();
 
 let latestLink = ''
+const PORT = process.env.PORT || 8000
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs');
@@ -15,14 +16,14 @@ async function getLatestLink(){
 };
 
 app.get('/', async(req,res) => {
+    latestLink = await getLatestLink()
     res.render('index',{
         latestLink: latestLink
     })
-    latestLink = await getLatestLink()
 })
 
 async function startServer(){
-    app.listen(3000, ()=> console.log('Runing at port 3000'))
+    app.listen(PORT, ()=> console.log(`Runing at port ${PORT}`))
 }
 startServer()
 
