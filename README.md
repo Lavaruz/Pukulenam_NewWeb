@@ -1,3 +1,7 @@
+The Web Live [Here](http://3.110.221.26:8000/)
+
+## Testing on localhost
+
 !! requires NodeJS for run this code on local server !!
 
 After cloning/downloading the code, do:
